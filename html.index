@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>لأميرة — موقع غزلي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fff6f8;
+      --rose:#d94b7f;
+      --gold:#cfa36b;
+      --text:#2b2b2b;
+      --muted:#7a6b6b;
+    }
+    *{box-sizing:border-box}
+    body{font-family:'Cairo',system-ui,Segoe UI,Arial; margin:0;background:linear-gradient(180deg,var(--bg),#fff);color:var(--text);}
+    header{padding:28px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffdce6, #ffd0ea);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+    .logo h1{margin:0;font-size:28px;color:var(--rose);}
+    nav a{margin-left:14px;text-decoration:none;color:var(--muted);font-weight:600}
+    nav a:hover{color:var(--rose)}
+
+    /* Hero */
+    .hero{min-height:70vh;display:grid;place-items:center;padding:40px 20px;position:relative;overflow:hidden}
+    .hero-card{max-width:980px;width:100%;background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,250,250,0.95));border-radius:22px;padding:34px;box-shadow:0 18px 50px rgba(217,75,127,0.08);border:1px solid rgba(217,75,127,0.06);display:flex;gap:24px;align-items:center}
+    .hero-left{flex:1}
+    .hero-right{width:280px;display:flex;flex-direction:column;align-items:center}
+    .title{font-size:34px;margin:0 0 8px 0;color:var(--rose);font-weight:800}
+    .subtitle{color:var(--muted);margin:0 0 18px 0}
+    .cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(90deg,var(--rose),#ff8fb4);color:white;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 8px 30px rgba(217,75,127,0.18)}
+
+    /* Poem box */
+    .poem{background:rgba(217,75,127,0.04);padding:16px;border-radius:12px;border:1px dashed rgba(217,75,127,0.12)}
+    .poem p{margin:8px 0;font-size:18px;line-height:1.7}
+    .eyes{display:inline-block;background:linear-gradient(90deg,#fff6f0,#fff);padding:6px 12px;border-radius:999px;border:1px solid rgba(0,0,0,0.04);font-weight:700;color:var(--rose)}
+
+    /* sections */
+    section{padding:40px 20px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .card{background:white;padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.03)}
+    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+
+    footer{padding:24px;text-align:center;color:var(--muted);font-size:14px}
+
+    /* floating hearts */
+    .heart{position:absolute;animation:float 8s linear infinite;opacity:0.95}
+    .heart:nth-child(1){left:8%;top:30%;transform:scale(.9);animation-duration:9s}
+    .heart:nth-child(2){left:22%;top:10%;transform:scale(.6);animation-duration:11s}
+    .heart:nth-child(3){right:16%;top:24%;transform:scale(.8);animation-duration:10s}
+    .heart:nth-child(4){left:68%;top:6%;transform:scale(.5);animation-duration:12s}
+    @keyframes float{0%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-26px) rotate(6deg)}100%{transform:translateY(0) rotate(0deg)}}
+
+    /* play button */
+    .play-btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;border:1px solid rgba(0,0,0,0.05);cursor:pointer;background:white}
+    .play-btn .dot{width:12px;height:12px;border-radius:50%;background:var(--rose);box-shadow:0 4px 14px rgba(217,75,127,0.25)}
+
+    /* small screens */
+    @media (max-width:700px){.hero-card{flex-direction:column}.hero-right{width:100%}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"><h1>أ</h1></div>
+      <div>
+        <div style="font-weight:900;color:var(--rose);font-size:18px">لأميرة</div>
+        <div style="font-size:13px;color:var(--muted)">هدية صغيرة من القلب</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#poem">قصيدة</a>
+      <a href="#gallery">صور</a>
+      <a href="#dedication">إهداء</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <!-- floating hearts SVGs -->
+      <svg class="heart" width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-4.35-9.02-6.42C-0.34 11.39 2.1 6 6.5 6 8.74 6 10 7.64 12 9.2 14 7.64 15.26 6 17.5 6c4.4 0 6.84 5.39 3.52 8.58C19 16.65 12 21 12 21z" fill="url(#g)" opacity="0.95"/></svg>
+      <svg class="heart" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-4.35-9.02-6.42C-0.34 11.39 2.1 6 6.5 6 8.74 6 10 7.64 12 9.2 14 7.64 15.26 6 17.5 6c4.4 0 6.84 5.39 3.52 8.58C19 16.65 12 21 12 21z" fill="rgba(217,75,127,0.12)"/></svg>
+      <svg class="heart" width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-4.35-9.02-6.42C-0.34 11.39 2.1 6 6.5 6 8.74 6 10 7.64 12 9.2 14 7.64 15.26 6 17.5 6c4.4 0 6.84 5.39 3.52 8.58C19 16.65 12 21 12 21z" fill="rgba(255,140,180,0.06)"/></svg>
+
+      <div class="hero-card">
+        <div class="hero-left">
+          <h2 class="title">أميرة، يا أجمل اسم سمعه قلبي</h2>
+          <p class="subtitle">موقع صغير فيه كلمات، صور، واهتمام بسيط يهديكِ لحظات حلوة.</p>
+
+          <div class="poem">
+            <!-- Short intro line -->
+            <p style="font-weight:800;font-size:18px;margin-bottom:6px">أهديكِ بيتاً من القلب — لأن عيونكِ تُشرق به عالمي</p>
+            <p>في عيونكِ أجدُ الليلَ مُزهراً، وفي بريقِها صار لي صباحُ لا يرحلُ.</p>
+            <p>أميرةُ، عندما تنظرين يهدأُ كل شيءٍ... حتى نبضي يتباطأ ليصغي لِخطى نظراتكِ.</p>
+            <p style="text-align:left;margin-top:8px"><span class="eyes">عيونكِ</span> تحملان أسرار سماءِ لا تُروى إلا للقلوبِ التي تجرؤ على الحلم.</p>
+          </div>
+
+          <div style="margin-top:16px;display:flex;gap:12px;align-items:center">
+            <div class="play-btn" id="playToggle" role="button" tabindex="0">
+              <div class="dot"></div>
+              <div style="font-weight:700">تشغيل "I Wanna Be Yours"</div>
+            </div>
+            <a class="cta" href="#dedication">ارسل إهداء الآن</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div style="width:180px;height:180px;border-radius:12px;overflow:hidden;box-shadow:0 12px 30px rgba(217,75,127,0.08);border:6px solid #fff;background:linear-gradient(180deg,#fff,#fff6f8);display:grid;place-items:center">
+            <!-- stylized rose -->
+            <svg width="120" height="120" viewBox="0 0 24 24"><g fill="none" stroke="none"><path d="M12 2c2.2 0 4 2 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4z" fill="#ffd6e8"/><path d="M6 14c.8 1 2 1.8 4 2s3.2-1 4-2c1-1 2-2 2-4s-1-3-2-4c-1-1-2-2-4-2s-3 1-4 2c-1 1-2 2-2 4s1 3 2 4z" fill="#ff8fb4"/></g></svg>
+          </div>
+          <small style="color:var(--muted);margin-top:12px">هدية بسيطة: موقع غزلي باسم أميرة</small>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="poem">
+      <h3 style="color:var(--rose);margin:0 0 12px 0">القصيدة — غزل في العيون</h3>
+      <div class="card poem">
+        <p style="font-size:20px;font-weight:800;margin-bottom:8px">لأميرة — لأن عيونك مرسى لسفني</p>
+        <p>يا أميرةُ، في ليلِ عيونك أجدُ مرافئَ الأمان،</p>
+        <p>تُغنّي نجومُ السماءِ على شَفاهِ نظراتكِ ألحانَها،</p>
+        <p>عيونكِ—طُهرٌ لم تَعلَمهِ الأيام—تَسقي قلبي أملاً، وتُعلّمُه كيف يحنُّ،</p>
+        <p>أحبكِ كما لو أنَّ الحروفَ تفتّحت لتناجي اسمكِ فقط،</p>
+        <p style="text-align:left;font-weight:700;margin-top:8px">وإن سألني الزمنُ عن سببِ ابتسامتي، فسأُشيرُ إلى عيونكِ بلا كلام.</p>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h3 style="color:var(--rose);margin:0 0 12px 0">صور ولحظات</h3>
+      <div class="grid gallery">
+        <div class="card"><img src="https://images.unsplash.com/photo-1503264116251-35a269479413?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="ورد"/><p style="margin:8px 0 0 0">وردة صباح</p></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="غروب"/><p style="margin:8px 0 0 0">غروب هادئ</p></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1520975861840-3a0b1d9f4b54?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="قلب"/><p style="margin:8px 0 0 0">قلب وذكرى</p></div>
+      </div>
+    </section>
+
+    <section id="dedication">
+      <h3 style="color:var(--rose);margin:0 0 12px 0">إهداء خاص</h3>
+      <div class="card">
+        <p>لو حبيت تبعث إهداء خاص لأميرة، انسخ العبارة أو عدّلها ثم أرسل لها الرابط.</p>
+        <textarea id="dedText" style="width:100%;height:120px;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);font-size:16px">أميرة، عيونكِ سحرت عالمي — أهديكِ هذا الموقع القديم الجديد كي تعرفي كم تعنين لي.</textarea>
+        <div style="display:flex;gap:12px;margin-top:12px"><button id="copyBtn" style="padding:10px 14px;border-radius:10px;border:none;background:var(--rose);color:white;font-weight:700;cursor:pointer">انسخ الإهداء</button>
+        <a id="shareLink" href="#" style="padding:10px 14px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);text-decoration:none;color:var(--rose);font-weight:700">مشاركة الرابط</a></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    صنعَ بحب ❤️ — هدية أميرة
+  </footer>
+
+  <!-- Hidden audio element: put your audio file in the repo and name it i-wanna-be-yours.mp3 -->
+  <audio id="bgAudio" src="i-wanna-be-yours.mp3" preload="auto" loop></audio>
+
+  <script>
+    // Play button toggles audio. Many browsers block autoplay — user interaction required.
+    const audio = document.getElementById('bgAudio');
+    const toggle = document.getElementById('playToggle');
+    let playing = false;
+    function setPlaying(p){
+      playing = p;
+      if(playing){ audio.play().catch(e=>console.log('autoplay blocked', e)); toggle.querySelector('div:last-child').textContent = 'إيقاف الموسيقى'; }
+      else { audio.pause(); toggle.querySelector('div:last-child').textContent = 'تشغيل "I Wanna Be Yours"'; }
+    }
+    toggle.addEventListener('click', ()=> setPlaying(!playing));
+    toggle.addEventListener('keydown', (e)=>{ if(e.key==='Enter') setPlaying(!playing) });
+
+    // Copy dedication
+    document.getElementById('copyBtn').addEventListener('click', async ()=>{
+      const txt = document.getElementById('dedText').value;
+      try{ await navigator.clipboard.writeText(txt); alert('تم نسخ الإهداء!') }catch(e){ alert('انسخ النص يدوياً: ' + txt) }
+    });
+
+    // Share link (example: simple deep link)
+    document.getElementById('shareLink').addEventListener('click', (e)=>{
+      e.preventDefault();
+      const base = location.href.split('#')[0];
+      const text = encodeURIComponent(document.getElementById('dedText').value);
+      const url = base + '#dedication?text=' + text;
+      prompt('انسخ الرابط وشاركه مع أميرة:', url);
+    });
+
+    // If page loaded with text in hash, populate textarea
+    (function(){
+      try{
+        const h = location.hash;
+        if(h.includes('text=')){
+          const t = decodeURIComponent(h.split('text=')[1]);
+          document.getElementById('dedText').value = t;
+          location.hash = 'dedication';
+        }
+      }catch(e){}
+    })();
+  </script>
+</body>
+</html>
